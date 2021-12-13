@@ -1,7 +1,7 @@
 {
-  "name": "tp-link-tapo-connect",
+  "name": "tp-link-kasa-connect",
   "version": "1.0.1",
-  "description": "JS Library for connecting to TP-Link Tapo devices",
+  "description": "JS Library for connecting to TP-Link Kasa devices",
   "main": "dist/api.js",
   "types": "dist/api.d.ts",
   "scripts": {
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "local-devices": "^3.1.0"
+    "local-devices": "^3.1.0",
+    "promise-socket": "^7.0.0",
+    "tplink-smarthome-crypto": "^3.0.0"
   }
 }

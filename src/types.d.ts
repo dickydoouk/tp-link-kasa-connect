@@ -1,5 +1,5 @@
 
-export type TapoDevice = {
+export type KasaDevice = {
     deviceType: string;
     fwVer: string;
     appServerUrl: string;
@@ -19,7 +19,7 @@ export type TapoDevice = {
     ip?: string
   }
   
-  export type TapoDeviceInfo = {
+  export type KasaDeviceInfo = {
     device_id: string;
     fw_ver: string;
     hw_ver: string;
@@ -51,7 +51,7 @@ export type TapoDevice = {
     lang: string; 
   }
   
-  export type TapoDeviceKey = {
+  export type KasaDeviceKey = {
     key: Buffer;
     iv: Buffer;
     deviceIp: string;

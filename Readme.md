@@ -1,10 +1,10 @@
-# TP-Link Tapo Connect
+# TP-Link Kasa Connect
 
-Unofficial Node.js library for connecting to TP-Link Tapo devices. Currently limited to the P100 & P105 smart plugs and L510E smart bulbs.
+Unofficial Node.js library for connecting to TP-Link Kasa devices. Currently supports HS100 only.
 
 ## Installation Instructions
 
-```npm install tp-link-tapo-connect```
+```npm install tp-link-kasa-connect```
 
 ## Usage
 
@@ -15,28 +15,21 @@ In order to discover your devices it is advisable to login to your TP-Link accou
 ```ts
 const cloudToken = await cloudLogin(email, password);
     
-const devices = await listDevicesByType(cloudToken, 'SMART.TAPOPLUG');
+const devices = await listDevicesByType(cloudToken, 'IOT.SMARTPLUGSWITCH');
 ```
 
 Once you have determined which device you wish to use. You can enquire of its current state using:
 
 ```ts
-const deviceToken = await loginDeviceByIp(email, password, deviceIp);
-    
-const getDeviceInfoResponse = await getDeviceInfo(deviceToken);
+const getDeviceInfoResponse = await getDeviceInfo(deviceIp);
+
 console.log(getDeviceInfoResponse);
 ```
 
 To change the device state e.g. turn it on or off use:
 
 ```ts
-await turnOn(deviceToken);
-await setBrightness(deviceToken, 75); // Sets brightness to 75% for smart bulbs only
-await turnOff(deviceToken);
+await turnOn(deviceIp);
+await turnOff(deviceIp);
 ```
 
-### Credits
-
-Credit to this API go to:
-* https://github.com/fishbigger/TapoP100
-* https://github.com/K4CZP3R/tapo-p100-java-poc
